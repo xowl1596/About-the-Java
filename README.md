@@ -92,29 +92,32 @@ GC는 크게 두가지 종류로 나뉩니다.
 
 * Thread 클래스 또는 Runnable 인터페이스를 상속받은 클래스를 생성
 * run 메소드 오버라이딩
-    Class T1 extends Thread{
-      public void run(){
-        // Do Something
-      }
-    }
-    // Or...
-    Class T2 implements Runnable{
-      public void run(){
-        // Do Something
-      }
-    }
+```
+Class T1 extends Thread{
+  public void run(){
+    // Do Something
+  }
+}
+// Or...
+Class T2 implements Runnable{
+  public void run(){
+    // Do Something
+  }
+}
+```
 * 객체 생성 후 start() 메소드 호출하면 스레드 실행
   + Thread 클래스를 상속받은 경우 : 바로 만들어두었던 클래스를 인스턴스화
-  ```
+  ```java
   public static void main(String[] args){
     T1 t = new T1("Thread name");
     t.start();
   }
   ```
   + Runnable 인터페이스를 상속받은 경우 : Thread 클래스의 생성자를 이용해 Thread 객체 생성
-  ```
+  ```java
   public static void main(String[] args){
     T2 t = new T2();
     Thread t2 = new Thread(t, "Thread name");
   }
   ```
+### 자바 멀티스레드
