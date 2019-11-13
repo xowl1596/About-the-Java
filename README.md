@@ -105,12 +105,16 @@ GC는 크게 두가지 종류로 나뉩니다.
     }
 * 객체 생성 후 start() 메소드 호출하면 스레드 실행
   + Thread 클래스를 상속받은 경우 : 바로 만들어두었던 클래스를 인스턴스화
-    public static void main(String[] args){
-      T1 t = new T1("Thread name");
-      t.start();
-    }
+  ```
+  public static void main(String[] args){
+    T1 t = new T1("Thread name");
+    t.start();
+  }
+  ```
   + Runnable 인터페이스를 상속받은 경우 : Thread 클래스의 생성자를 이용해 Thread 객체 생성
-    public static void main(String[] args){
-      T2 t = new T2();
-      Thread t2 = new Thread(t, "Thread name");
-    }
+  ```
+  public static void main(String[] args){
+    T2 t = new T2();
+    Thread t2 = new Thread(t, "Thread name");
+  }
+  ```
